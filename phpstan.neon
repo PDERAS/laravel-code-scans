@@ -1,0 +1,10 @@
+includes:
+    - phpstan.extension.neon
+    - %currentWorkingDirectory%/vendor/larastan/larastan/extension.neon
+
+parameters:
+    bootstrapFiles:
+        - %currentWorkingDirectory%/vendor/autoload.php
+    paths:
+        - app
+    checkModelProperties: true

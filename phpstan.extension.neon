@@ -1,0 +1,4 @@
+services: 
+    errorFormatter.fabled:
+        class: Pderas\LaravelCodeScans\Formatters\FabledErrorFormat
+        tags: { phpstan.errorFormatter: fabled }
