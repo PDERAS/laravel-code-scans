@@ -127,8 +127,6 @@ final class FabledErrorFormat implements ErrorFormatter
             . ', General ' . ($category_totals['General'] ?? 0)
         );
 
-        $output->writeLineFormatted((int) $has_errors > 0);
-
         return (int) $has_errors > 0;
     }
 
