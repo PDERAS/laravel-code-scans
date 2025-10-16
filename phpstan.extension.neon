@@ -1,4 +1,19 @@
-services: 
+services:
+    -
+        class: Pderas\LaravelCodeScans\Stan\Rules\DisallowFunctionCallsRule
+        arguments:
+            - [shell_exec, exec, system, passthru, eval]
+        tags:
+            - phpstan.rules.rule
+    -
+        class: Pderas\LaravelCodeScans\Stan\Rules\DisallowExitLikeCallsRule
+        tags:
+            - phpstan.rules.rule
+    -
+        class: Pderas\LaravelCodeScans\Stan\Rules\DisallowDebugHelpersRule
+        tags:
+            - phpstan.rules.rule
+
     errorFormatter.fabled:
         class: Pderas\LaravelCodeScans\Formatters\FabledErrorFormat
         tags: { phpstan.errorFormatter: fabled }
