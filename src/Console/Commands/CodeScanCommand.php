@@ -31,6 +31,7 @@ class CodeScanCommand extends Command
         ];
 
         $process = new Process($phpstan_cmd);
+        $process->setTimeout(300); // 5 minutes
         $process->setTty(Process::isTtySupported());
         $process->run(function ($type, $buffer) {
             echo $buffer;
@@ -39,7 +40,7 @@ class CodeScanCommand extends Command
         if ($exit === 0) {
             $this->info('All code quality checks passed!');
         }
-        
+
         return $exit;
     }
 }
